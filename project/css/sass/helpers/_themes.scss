@@ -1,0 +1,42 @@
+$theme:( light_theme:( theme:$gray-200, text_color:$gray-900, sub_color:$gray-600, main_color: $indigo-400), dark_theme:( theme: $gray-900, text_color:$gray-100, sub_color: $gray-600, main_color: $indigo-400));
+@each $theme,
+$map in $theme {
+    .#{$theme} {
+        .landing_page {
+            background-color: map-get($map, main_color);
+            .logo {
+                color: map-get($map, text_color)
+            }
+            .scroller {
+                color: map-get($map, text_color)
+            }
+            .landing_title {
+                color: map-get($map, text_color)
+            }
+        }
+        .about {
+            @include bg-line($indigo-400, $indigo-900);
+            .img_container {
+                background-color: map-get($map, main_color);
+            }
+            .title {
+                color: map-get($map, main_color)
+            }
+            .subtitle {
+                color: map-get($map, sub_color)
+            }
+            p {
+                color: map-get($map, text_color);
+            }
+            h1 {
+                color: map-get($map, text_color);
+            }
+            h6 {
+                color: map-get($map, sub_color);
+            }
+            .fa-github {
+                color: map-get($map, text_color);
+            }
+        }
+    }
+}

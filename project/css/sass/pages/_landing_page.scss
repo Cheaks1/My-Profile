@@ -1,0 +1,52 @@
+    .landing_page {
+        @include dementions(100vh, 100%);
+        position: relative;
+        overflow-y: hidden;
+        .header_flex {
+            @include flex-mode($justify: space-between);
+            width: 87vw;
+            margin: auto;
+            .logo {
+                @include font(null, 32, 700);
+                cursor: pointer;
+            }
+            .theme_icons,
+            .logo {
+                padding-top: 20px;
+            }
+            .theme_icons {
+                z-index: 1;
+                i {
+                    font-size: 33px;
+                    cursor: pointer;
+                }
+                i.light {
+                    color: white;
+                    display: none;
+                }
+            }
+        }
+        img {
+            @include abselute($bottom: -350px, $right: 120px);
+        }
+        .scroller {
+            @include flex-mode(15);
+            @include font(null, 23, 400);
+            transform: rotate(90deg);
+            animation: pop 1.5s infinite alternate;
+            cursor: pointer;
+        }
+        .landing_title {
+            @include font(null, 240, 600);
+            width: min-content;
+            text-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+            margin: {
+                top: 50px;
+                left: 120px
+            }
+            line-height: .9;
+            span {
+                text-shadow: none;
+            }
+        }
+    }
