@@ -1,0 +1,16 @@
+.nav {
+    @include abselute($bottom: 50px, $left: 50%);
+    transform: translateX(-50%);
+    ul {
+        @include flex-mode(20);
+        position: sticky;
+        opacity: 0;
+        transform: translateY(-200px);
+        transition: 1s;
+        border-radius: 40px;
+        padding: 10px 20px;
+        i {
+            @include font($gray-200, 30)
+        }
+    }
+}

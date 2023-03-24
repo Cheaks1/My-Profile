@@ -15,7 +15,7 @@ $map in $theme {
             }
         }
         .about {
-            @include bg-line($indigo-400, $indigo-900);
+            background-color: map-get($map, theme);
             .img_container {
                 background-color: map-get($map, main_color);
             }
@@ -36,6 +36,11 @@ $map in $theme {
             }
             .fa-github {
                 color: map-get($map, text_color);
+            }
+        }
+        .nav {
+            ul {
+                background-color: map-get($map, sub_color);
             }
         }
     }

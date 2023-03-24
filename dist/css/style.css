@@ -1,4 +1,5 @@
 body {
+  position: relative;
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
 }
@@ -38,7 +39,7 @@ h1 {
   width: 100%;
   height: 100vh;
   position: relative;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 .landing_page .header_flex {
   display: flex;
@@ -97,10 +98,16 @@ h1 {
   text-shadow: none;
 }
 
+.show {
+  opacity: 1 !important;
+  transform: translate(0, 0) !important;
+}
+
 .about {
   width: 100vw;
   height: 100vh;
   position: relative;
+  overflow: hidden;
 }
 .about h1 {
   letter-spacing: 5px;
@@ -111,6 +118,9 @@ h1 {
   position: relative;
   width: 400px;
   height: 400px;
+  transform: translateX(-700px);
+  opacity: 0;
+  transition: 1s;
   overflow: hidden;
   border-radius: 50%;
 }
@@ -130,6 +140,9 @@ h1 {
   gap: px;
 }
 .about .about_container .text_container {
+  opacity: 0;
+  transform: translateX(700px);
+  transition: 1s;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -160,6 +173,29 @@ h1 {
   color: #d63384;
 }
 
+.nav {
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  transform: translateX(-50%);
+}
+.nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  position: sticky;
+  opacity: 0;
+  transform: translateY(-200px);
+  transition: 1s;
+  border-radius: 40px;
+  padding: 10px 20px;
+}
+.nav ul i {
+  font-size: 30px;
+  color: #e9ecef;
+}
+
 .light_theme .landing_page {
   background-color: #8540f5;
 }
@@ -173,7 +209,7 @@ h1 {
   color: #212529;
 }
 .light_theme .about {
-  background-color: linear-gradient(#8540f5, #140330);
+  background-color: #e9ecef;
 }
 .light_theme .about .img_container {
   background-color: #8540f5;
@@ -196,6 +232,9 @@ h1 {
 .light_theme .about .fa-github {
   color: #212529;
 }
+.light_theme .nav ul {
+  background-color: #6c757d;
+}
 
 .dark_theme .landing_page {
   background-color: #8540f5;
@@ -210,7 +249,7 @@ h1 {
   color: #f8f9fa;
 }
 .dark_theme .about {
-  background-color: linear-gradient(#8540f5, #140330);
+  background-color: #212529;
 }
 .dark_theme .about .img_container {
   background-color: #8540f5;
@@ -232,4 +271,7 @@ h1 {
 }
 .dark_theme .about .fa-github {
   color: #f8f9fa;
+}
+.dark_theme .nav ul {
+  background-color: #6c757d;
 }
