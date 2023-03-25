@@ -1,0 +1,22 @@
+@include media-breakpoint-down (md) {
+    $p_font: 18;
+    $h_font: 36;
+    .landing_page {
+        img {
+            display: none;
+        }
+    }
+    .about {
+        .about_container {
+            flex-direction: column;
+            @include dementions(100%, 85%);
+            margin-top: 35px;
+        }
+        .title {
+            font-size: $h_font+px;
+        }
+        p {
+            font-size: $p_font+px;
+        }
+    }
+}

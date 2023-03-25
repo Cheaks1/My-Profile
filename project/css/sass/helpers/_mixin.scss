@@ -17,8 +17,8 @@
 
 //This mixin sets the font size and weight  and the color of an element.
 // The $size and $weight parameters are values that you can pass to the mixin to customize the font size and weight.
-@mixin font ($color:null, $size:null, $weight:null) {
-    font-size: $size+px;
+@mixin font ($color:null+px, $size:null, $weight:null) {
+    font-size: $size;
     font-weight: $weight;
     color: $color;
 }
@@ -62,8 +62,8 @@
 }
 
 //This mixin creates a linear gradient background with multiple colors. 
-@mixin bg-line($colors...) {
-    background-color: linear-gradient($colors...);
+@mixin bg-line($deg:null, $colors...) {
+    background-image: linear-gradient($deg, $colors...);
 }
 
 //This mixin creates a border with a specified color and height.

@@ -1,0 +1,9 @@
+//animations
+@keyframes pop {
+    from {
+        @include abselute($bottom: 150px, $left: 70px);
+    }
+    to {
+        @include abselute($bottom: 120px, $left: 70px);
+    }
+}

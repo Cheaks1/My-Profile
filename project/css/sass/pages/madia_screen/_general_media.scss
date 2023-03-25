@@ -1,0 +1,34 @@
+@include media-breakpoint-between(xs, md) {
+    .landing_page {
+        img {
+            display: none;
+        }
+        .scroller {
+            margin-left: -90px;
+        }
+    }
+    .about {
+        .about_container {
+            @include dementions(100%, 85%);
+            @include flex-mode($justify: flex-start);
+            flex-direction: column;
+        }
+        .img_container {
+            @include dementions(180px, 180px);
+            margin: auto;
+            img {
+                @include dementions(auto, 265px);
+            }
+        }
+        .text_container {
+            align-items: center !important;
+            gap: 20px !important;
+            .titles {
+                text-align: center;
+            }
+            p {
+                text-align: center;
+            }
+        }
+    }
+}

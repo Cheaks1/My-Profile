@@ -1,9 +1,9 @@
-$theme:( light_theme:( theme:$gray-200, text_color:$gray-900, sub_color:$gray-600, main_color: $indigo-400), dark_theme:( theme: $gray-900, text_color:$gray-100, sub_color: $gray-600, main_color: $indigo-400));
+$theme:( light_theme:( theme:white, text_color:$gray-900, text_color_rgb:rgba(122, 130, 138, .4), sub_color:$gray-600, sub_color_rgb:rgba(233, 235, 237, .5), main_color: $indigo-400, sub_main:$indigo-500), dark_theme:( theme: $gray-900, text_color:$gray-100, text_color_rgb:rgba(248, 249, 250, .4), sub_color: $gray-600, sub_color_rgb:rgba(108, 117, 125, .5), main_color: $indigo-400, sub_main:$indigo-500));
 @each $theme,
 $map in $theme {
     .#{$theme} {
         .landing_page {
-            background-color: map-get($map, main_color);
+            @include bg-line(map-get($map, main_color) 60%, map-get($map, sub_main));
             .logo {
                 color: map-get($map, text_color)
             }
@@ -17,7 +17,7 @@ $map in $theme {
         .about {
             background-color: map-get($map, theme);
             .img_container {
-                background-color: map-get($map, main_color);
+                @include bg-line(map-get($map, main_color) 10%, map-get($map, sub_main));
             }
             .title {
                 color: map-get($map, main_color)
@@ -40,7 +40,11 @@ $map in $theme {
         }
         .nav {
             ul {
-                background-color: map-get($map, sub_color);
+                @include bg-line(25deg, map-get($map, sub_color_rgb), map-get($map, text_color_rgb));
+                backdrop-filter: blur(10px);
+                i {
+                    @include font(map-get($map, text_color), $i_font+px)
+                }
             }
         }
     }

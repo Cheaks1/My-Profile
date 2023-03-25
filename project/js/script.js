@@ -40,5 +40,13 @@ var scene = new ScrollMagic.Scene({
   .addTo(controller);
 
 //show the nav bar
-let navBar = document.querySelector(".nav");
+let navList = document.querySelector(".navList");
 let aboutSection = document.querySelector(".about");
+
+window.onscroll = function () {
+  if (this.scrollX > 469) {
+    navList.classlist.add("show");
+  } else {
+    navList.classlist.remove("show");
+  }
+};

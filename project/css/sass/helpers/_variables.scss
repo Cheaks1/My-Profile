@@ -1,6 +1,8 @@
 //variables
-//box shadow
-$shadow:rgba(0, 0, 0, 0.1) 0px 4px 12px;
+//font size
+$p_font:20;
+$h_font:40;
+$i_font:30;
 //.section_scroll {
 //  overflow-y: scroll;
 //scroll-snap-type: y mandatory;
@@ -30,14 +32,4 @@ li {
 
 h1 {
     padding-top: 40px;
-}
-
-//animations
-@keyframes pop {
-    from {
-        @include abselute($bottom: 150px, $left: 70px);
-    }
-    to {
-        @include abselute($bottom: 120px, $left: 70px);
-    }
 }

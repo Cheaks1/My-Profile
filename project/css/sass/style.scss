@@ -1,11 +1,15 @@
-@import './helpers/mixin';
 @import "../../../node_modules/bootstrap/scss/functions";
 @import "../../../node_modules/bootstrap/scss/variables";
 @import "../../../node_modules/bootstrap/scss/maps";
 @import "../../../node_modules/bootstrap/scss/mixins";
 @import "../../../node_modules/bootstrap/scss/utilities";
 @import "./helpers/variables";
+@import './helpers/mixin';
 @import"./pages/landing_page";
 @import "./pages/about";
 @import "./pages/navigation_bar";
 @import "./helpers/themes";
+@import './helpers/animations';
+@import "./pages/madia_screen/sm_media";
+@import "./pages/madia_screen/md_media";
+@import "./pages/madia_screen/general_media"

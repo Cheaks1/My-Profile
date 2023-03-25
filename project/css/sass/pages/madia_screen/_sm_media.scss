@@ -1,0 +1,21 @@
+@include media-breakpoint-down (sm) {
+    $p_font: 15;
+    $h_font: 33;
+    $i_font: 28;
+    .about {
+        .about_container {
+            margin-top: 35px;
+        }
+        .text_container {
+            .title {
+                font-size: $h_font+px;
+            }
+            p {
+                font-size: $p_font+px;
+            }
+            p span:first-child {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,61 +1,66 @@
- .show {
-     opacity: 1 !important;
-     transform: translate(0, 0) !important;
- }
- 
- .about {
-     //scroll-snap-align: start;
-     @include dementions(100vh, 100vw);
-     position: relative;
-     overflow: hidden;
-     h1 {
-         letter-spacing: 5px;
-         @include font(null, 60, 600)
-     }
-     .img_container {
-         position: relative;
-         @include dementions(400px, 400px);
-         transform: translateX(-700px);
-         opacity: 0;
-         transition: 1s;
-         overflow: hidden;
-         border-radius: 50%;
-         img {
-             z-index: 2;
-             @include abselute($top: 0px, $left: -40px)
-         }
-     }
-     .about_container {
-         @include dementions(90%, 70%);
-         margin: auto;
-         @include flex-mode();
-         .text_container {
-             opacity: 0;
-             transform: translateX(700px);
-             transition: 1s;
-             @include flex-mode(50, $align: flex-start, $justify: flex-start);
-             flex-direction: column;
-             .title {
-                 @include font(null, 40, 600)
-             }
-             .subtitle {
-                 @include font(null, 20, 500)
-             }
-             p {
-                 font-weight: 500;
-                 font-size: 18px;
-             }
-         }
-         .social_icons {
-             display: flex;
-             gap: 15px;
-             justify-content: flex-start;
-             i {
-                 font-size: 30px;
-             }
-             .fa-instagram {
-                 color: $pink-500;
-             }
-         }
-     }
- }
+.show {
+    opacity: 1 !important;
+    transform: translate(0, 0) !important;
+}
+
+.about {
+    //scroll-snap-align: start;
+    @include dementions(100vh, 100vw);
+    position: relative;
+    overflow: hidden;
+    .header_container {
+        position: relative;
+    }
+    h1 {
+        position: relative;
+        letter-spacing: 5px;
+        @include font(null, 60px, 600);
+        padding: 10px;
+    }
+    .img_container {
+        position: relative;
+        @include dementions(400px, 400px);
+        transform: translateX(-700px);
+        opacity: 0;
+        transition: 1s;
+        overflow: hidden;
+        border-radius: 50%;
+        img {
+            z-index: 2;
+            @include abselute($top: 0px, $left: -40px)
+        }
+    }
+    .about_container {
+        @include dementions(90%, 70%);
+        margin: auto;
+        @include flex-mode();
+        .text_container {
+            opacity: 0;
+            transform: translateX(700px);
+            transition: 1s;
+            @include flex-mode(20, $align: flex-start, $justify: flex-start);
+            flex-direction: column;
+            .title {
+                @include font(null, $h_font+px, 600)
+            }
+            .subtitle {
+                @include font(null, $p_font+px, 500)
+            }
+            p {
+                font-weight: 500;
+                font-size: $p_font+px;
+            }
+        }
+        .social_icons {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-start;
+            i {
+                font-size: $i_font+px;
+            }
+            .fa-instagram {
+                color: $pink-500;
+            }
+        }
+    }
+}
