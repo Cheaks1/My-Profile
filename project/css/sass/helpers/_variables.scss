@@ -1,6 +1,6 @@
 //variables
 //font size
-$p_font:20;
+$p_font:23;
 $h_font:40;
 $i_font:30;
 //.section_scroll {
@@ -31,5 +31,8 @@ li {
 }
 
 h1 {
+    padding: 10;
     padding-top: 40px;
+    letter-spacing: 5px;
+    @include font(null, 60, 600);
 }

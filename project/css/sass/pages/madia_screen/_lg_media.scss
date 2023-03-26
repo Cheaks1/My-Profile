@@ -1,0 +1,32 @@
+@include media-breakpoint-down(lg) {
+    $p_font: 19;
+    $h_font: 38;
+    .landing_page {
+        img {
+            display: none;
+        }
+    }
+    .about {
+        .about_container {
+            @include dementions(90%, 95%);
+            .img_container {
+                @include dementions(270px, 270px);
+                img {
+                    @include dementions(auto, 400px);
+                    @include abselute($top: -31px, $left: -64px)
+                }
+            }
+            .text_container {
+                .title {
+                    @include font(null, $h_font, 600)
+                }
+                .subtitle {
+                    @include font(null, $p_font, 500)
+                }
+                p {
+                    @include font(null, $p_font, 500)
+                }
+            }
+        }
+    }
+}

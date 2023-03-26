@@ -17,8 +17,8 @@
 
 //This mixin sets the font size and weight  and the color of an element.
 // The $size and $weight parameters are values that you can pass to the mixin to customize the font size and weight.
-@mixin font ($color:null+px, $size:null, $weight:null) {
-    font-size: $size;
+@mixin font ($color:null, $size:null, $weight:null) {
+    font-size: $size+px;
     font-weight: $weight;
     color: $color;
 }

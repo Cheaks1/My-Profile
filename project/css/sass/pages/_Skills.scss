@@ -1,0 +1,53 @@
+    .skills {
+        @include dementions(100vh, 100vw);
+        position: relative;
+        .skills_big_container {
+            @include dementions(90%, 80%);
+            @include centering;
+            @include flex-mode()
+        }
+        .skills_info {
+            background: $gray-300;
+            @include dementions(50%, auto);
+            border-radius: 5px
+        }
+        .skills_container {
+            @include flex-mode(20);
+            flex-wrap: wrap;
+            .logo_container {
+                @include flex-mode(10);
+                flex-direction: column;
+                .percent_container {
+                    @include dementions(90px, 90px);
+                    position: relative;
+                    svg {
+                        @include centering;
+                        @include dementions(100%, 100%);
+                        circle {
+                            stroke-width: 10;
+                            stroke-linecap: round;
+                        }
+                        circle:nth-child(1) {
+                            stroke: $gray-200;
+                            stroke-dasharray: 0;
+                        }
+                        circle:nth-child(2) {
+                            stroke: $indigo-400;
+                            stroke-dashoffset: 450;
+                            stroke-dasharray: 150;
+                            //animation: rotate 2s;
+                        }
+                    }
+                    .img_container {
+                        position: absolute;
+                        top: 12%;
+                        left: 11%;
+                        @include dementions(70px, 70px);
+                        overflow: hidden;
+                        @include flex-mode();
+                        border-radius: 50px;
+                    }
+                }
+            }
+        }
+    }

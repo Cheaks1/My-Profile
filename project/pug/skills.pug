@@ -1,0 +1,18 @@
+section.skills
+    .titles.text-center
+        h1.title SKILLS
+        h6.subtitle My Technical Level
+    -var logoArr=["Html","Css","Js","Bootstrap","Sass","PugJs","GulpJS","VueJS","Git","Github"]
+    section.skills_big_container.row
+        main.skills_container.col-5       
+                each logo,index in logoArr
+                    .logo_container
+                        .percent_container
+                            .img_container
+                                img(src=`./img/logo/${logo}.png`, alt="", width="60px",height="auto") 
+                            svg
+                                circle(r='38',cx='45',cy='45' fill='none')
+                                circle(r='38',cx='45',cy='45' fill='none')       
+                        h6.logo #{logo}
+        main.skills_info.col
+

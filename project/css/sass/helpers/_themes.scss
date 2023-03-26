@@ -1,4 +1,4 @@
-$theme:( light_theme:( theme:white, text_color:$gray-900, text_color_rgb:rgba(122, 130, 138, .4), sub_color:$gray-600, sub_color_rgb:rgba(233, 235, 237, .5), main_color: $indigo-400, sub_main:$indigo-500), dark_theme:( theme: $gray-900, text_color:$gray-100, text_color_rgb:rgba(248, 249, 250, .4), sub_color: $gray-600, sub_color_rgb:rgba(108, 117, 125, .5), main_color: $indigo-400, sub_main:$indigo-500));
+$theme:( light_theme:( theme:$gray-100, text_color:$gray-900, text_color_rgb:rgba(122, 130, 138, .2), sub_color:$gray-600, sub_color_rgb:rgba(233, 235, 237, .3), main_color: $indigo-400, sub_main:$indigo-500), dark_theme:( theme: $gray-900, text_color:$gray-100, text_color_rgb:rgba(248, 249, 250, .2), sub_color: $gray-600, sub_color_rgb:rgba(108, 117, 125, .3), main_color: $indigo-400, sub_main:$indigo-500));
 @each $theme,
 $map in $theme {
     .#{$theme} {
@@ -43,7 +43,7 @@ $map in $theme {
                 @include bg-line(25deg, map-get($map, sub_color_rgb), map-get($map, text_color_rgb));
                 backdrop-filter: blur(10px);
                 i {
-                    @include font(map-get($map, text_color), $i_font+px)
+                    @include font(map-get($map, text_color), $i_font)
                 }
             }
         }

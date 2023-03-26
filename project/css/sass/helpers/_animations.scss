@@ -7,3 +7,12 @@
         @include abselute($bottom: 120px, $left: 70px);
     }
 }
+
+@keyframes rotate {
+    from {
+        stroke-dasharray: 450;
+    }
+    to {
+        stroke-dasharray: 100;
+    }
+}
