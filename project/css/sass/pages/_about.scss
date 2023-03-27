@@ -34,6 +34,9 @@
             transition: 1s;
             @include flex-mode(20, $align: flex-start, $justify: flex-start);
             flex-direction: column;
+            .title {
+                @include font(null, 35, 600)
+            }
             p {
                 font-weight: 500;
                 font-size: $p_font+px;

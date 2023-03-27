@@ -2,17 +2,14 @@ section.skills
     .titles.text-center
         h1.title SKILLS
         h6.subtitle My Technical Level
-    -var logoArr=["Html","Css","Js","Bootstrap","Sass","PugJs","GulpJS","VueJS","Git","Github"]
+    -var logoArr=[{name:"Html",percent:96}, {name:"Css",percent:93},{name:"Js",percent:64},{name:"Bootstrap",percent:90},{name:"Sass",percent:90},{name:"Pugjs",percent:80},{name:"GulpJs",percent:70},{name:"VueJs",percent:55},{name:"Git",percent:71},{name:"Github",percent:73}]
     section.skills_big_container.row
         main.skills_container.col-5       
                 each logo,index in logoArr
                     .logo_container
-                        .percent_container
+                        .percent(data-percent=`${logo.percent}`) 
+                        .progress(data-percent=`${logo.percent}`) 
                             .img_container
-                                img(src=`./img/logo/${logo}.png`, alt="", width="60px",height="auto") 
-                            svg
-                                circle(r='38',cx='45',cy='45' fill='none')
-                                circle(r='38',cx='45',cy='45' fill='none')       
-                        h6.logo #{logo}
+                                img(src=`./img/logo/${logo.name}.png`, alt="", width="50px",height="auto") 
+                        h6.logo #{logo.name}
         main.skills_info.col
-
