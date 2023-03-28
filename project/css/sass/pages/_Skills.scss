@@ -2,46 +2,85 @@
     @include dementions(100vh, 100vw);
     position: relative;
     .skills_big_container {
-        @include dementions(90%, 80%);
-        @include centering;
+        @include dementions(85%, 80%);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
         @include flex-mode()
     }
-    .skills_info {
-        background: $gray-300;
-        @include dementions(50%, auto);
-        border-radius: 5px;
-    }
     .skills_container {
-        @include flex-mode(20);
+        @include flex-mode(10);
         flex-wrap: wrap;
-        .logo_container {
-            @include flex-mode(10);
+        flex-direction: column;
+        .section_container {
+            @include flex-mode(5);
             flex-direction: column;
-            cursor: pointer;
+            .logos_container {
+                @include flex-mode(15);
+                flex-wrap: wrap
+            }
+            &:nth-child(2) {
+                width: 80%;
+            }
+        }
+        .logo_container {
+            @include flex-mode(7);
+            flex-direction: column;
+            flex-shrink: 1;
             .progress {
                 position: relative;
-                @include dementions(94px, 94px);
+                @include dementions(72px, 72px);
                 border-radius: 50%;
                 transition: .5s;
-                background: conic-gradient(#6610f2 0deg, #dde2e6 0deg);
+                cursor: pointer;
                 .img_container {
-                    @include dementions(77px, 77px);
-                    @include abselute(9%, null, null, 9%);
+                    @include dementions(55px, 55px);
+                    @include abselute(11%, null, null, 11%);
                     overflow: hidden;
-                    background-color: white;
                     @include flex-mode();
                     border-radius: 50px;
                 }
             }
             .percent {
-                @include font($gray-100, 12, 600);
-                background-color: $indigo-400;
                 padding: 2px 4px;
             }
         }
     }
-}
-
-.prog {
-    animation: rotate 2s both;
+    .skills_info {
+        //@include dementions(50%, auto);
+        border-radius: 5px;
+        padding: 40px 20px;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(5px);
+        h2 {
+            padding: 150px 50px;
+            color: $gray-500;
+            text-align: center;
+        }
+        li {
+            list-style-type: square;
+            margin-top: 10px;
+            p {
+                margin-top: 5px;
+            }
+            h6 {
+                color: #6610f2;
+            }
+        }
+        h3 {
+            color: $indigo-400;
+            margin-bottom: 30px;
+        }
+        .logo_description {
+            display: none;
+            opacity: 0;
+            transition: opacity .5s;
+        }
+        img {
+            @include centering;
+            opacity: .2;
+            z-index: 2;
+        }
+    }
 }

@@ -1,51 +1,92 @@
-$theme:( light_theme:( theme:$gray-100, text_color:$gray-900, text_color_rgb:rgba(122, 130, 138, .2), sub_color:$gray-600, sub_color_rgb:rgba(233, 235, 237, .3), main_color: $indigo-400, sub_main:$indigo-500), dark_theme:( theme: $gray-900, text_color:$gray-100, text_color_rgb:rgba(248, 249, 250, .2), sub_color: $gray-600, sub_color_rgb:rgba(108, 117, 125, .3), main_color: $indigo-400, sub_main:$indigo-500));
-@each $theme,
-$map in $theme {
-    .#{$theme} {
-        .landing_page {
-            @include bg-line(map-get($map, main_color) 60%, map-get($map, sub_main));
-            .logo {
-                color: map-get($map, text_color)
-            }
-            .scroller {
-                color: map-get($map, text_color)
-            }
-            .landing_title {
-                color: map-get($map, text_color)
-            }
-        }
-        .about {
-            background-color: map-get($map, theme);
-            .img_container {
-                @include bg-line(map-get($map, main_color) 10%, map-get($map, sub_main));
-            }
-            .title {
-                color: map-get($map, main_color)
-            }
-            .subtitle {
-                color: map-get($map, sub_color)
-            }
-            p {
-                color: map-get($map, text_color);
-            }
+    $theme:( light_theme:( theme:$gray-100, text_color:$gray-900, text_color_rgb:rgba(122, 130, 138, .1), sub_color:$gray-600, sub_color_rgb:rgba(233, 235, 237, .3), main_color: $indigo-400, sub_main:$indigo-500), dark_theme:( theme: $gray-900, text_color:$gray-100, text_color_rgb:rgba(248, 249, 250, .1), sub_color: $gray-600, sub_color_rgb:rgba(108, 117, 125, .3), main_color: $indigo-400, sub_main:$indigo-500));
+    @each $theme,
+    $map in $theme {
+        .#{$theme} {
             h1 {
                 color: map-get($map, text_color);
+                -webkit-text-fill-color: map-get($map, theme);
+                -webkit-text-stroke: 2px map-get($map, main_color);
+                width: fit-content;
+                margin: auto;
+                position: relative;
+                &:before {
+                    content: attr(data-fill);
+                    position: absolute;
+                    left: 0;
+                    -webkit-text-fill-color: map-get($map, main_color);
+                    transition: .5s;
+                    width: 44%;
+                    overflow: hidden;
+                }
+                &:hover:before {
+                    width: 100%;
+                }
             }
             h6 {
                 color: map-get($map, sub_color);
             }
-            .fa-github {
-                color: map-get($map, text_color);
+            .landing_page {
+                @include bg-line(map-get($map, main_color) 60%, map-get($map, sub_main));
+                .logo {
+                    color: map-get($map, text_color)
+                }
+                .scroller {
+                    color: map-get($map, text_color)
+                }
+                .landing_title {
+                    color: map-get($map, text_color)
+                }
             }
-        }
-        .nav {
-            ul {
-                @include bg-line(25deg, map-get($map, sub_color_rgb), map-get($map, text_color_rgb));
-                backdrop-filter: blur(10px);
-                i {
-                    @include font(map-get($map, text_color), $i_font)
+            .about {
+                background-color: map-get($map, theme);
+                .img_container {
+                    @include bg-line(map-get($map, main_color) 10%, map-get($map, sub_main));
+                }
+                .title {
+                    color: map-get($map, main_color)
+                }
+                .subtitle {
+                    color: map-get($map, sub_color)
+                }
+                p {
+                    color: map-get($map, text_color);
+                }
+                .fa-github {
+                    color: map-get($map, text_color);
+                }
+            }
+            .nav {
+                ul {
+                    @include bg-line(25deg, map-get($map, sub_color_rgb), map-get($map, text_color_rgb));
+                    backdrop-filter: blur(10px);
+                    i {
+                        @include font(map-get($map, text_color), $i_font)
+                    }
+                }
+            }
+            .skills {
+                background-color: map-get($map, theme);
+                .percent {
+                    @include font(map-get($map, theme), 12, 600);
+                    background-color: $indigo-400;
+                }
+                .img_container {
+                    background-color: map-get($map, theme);
+                }
+                .skills_info {
+                    background: map-get($map, text_color_rgb);
+                    .logo_description {
+                        li {
+                            color: map-get($map, sub_color);
+                            p {
+                                color: map-get($map, text_color);
+                            }
+                            h6 {
+                                color: map-get($map, sub_color);
+                            }
+                        }
+                    }
                 }
             }
         }
     }
-}
